@@ -7,8 +7,8 @@ function addUser(){
     localStorage.setItem("User 1", document.getElementById("user_in_1").value)
     localStorage.setItem("User 2", document.getElementById("user_in_2").value)
     location.href = "http://127.0.0.1:5500/New%20folder/index2.html"
-    user1 = String(localStorage.getItem("User 1"))
-    user2 = String(localStorage.getItem("User 2"))
+    user1 = localStorage.getItem("User 1")
+    user2 = localStorage.getItem("User 2")
 }
 function setup(){
     document.getElementById("player1_name").innerHTML = user1 + ": " + player1_score
