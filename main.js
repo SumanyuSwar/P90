@@ -1,5 +1,6 @@
 var player1_score = 0
-localStorage.clear()
+localStorage.removeItem("User 1")
+localStorage.removeItem("User 2")
 var player2_score = 0
 answer = 0
 function addUser(){
