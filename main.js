@@ -1,18 +1,20 @@
 var player1_score = 0
-localStorage.removeItem("User 1")
-localStorage.removeItem("User 2")
 var player2_score = 0
 answer = 0
+localStorage.removeItem("User 1")
+localStorage.removeItem("User 2")
 function addUser(){
     localStorage.setItem("User 1", document.getElementById("user_in_1").value)
     localStorage.setItem("User 2", document.getElementById("user_in_2").value)
     location.href = "http://127.0.0.1:5500/New%20folder/index2.html"
+    user1 = localStorage.getItem("User 1")
+    user2 = localStorage.getItem("User 2")
 }
 function setup(){
-    document.getElementById("player1_name").innerHTML = localStorage.getItem("User 1") + ": " + player1_score
-    document.getElementById("player2_name").innerHTML = localStorage.getItem("User 2") + ": " + player2_score
-    document.getElementById("player_question").innerHTML = "Question Turn- " + localStorage.getItem("User 1")
-    document.getElementById("player_answer").innerHTML = "Answer Turn- " + localStorage.getItem("User 2")
+    document.getElementById("player1_name").innerHTML = user1 + ": " + player1_score
+    document.getElementById("player2_name").innerHTML = user2 + ": " + player2_score
+    document.getElementById("player_question").innerHTML = "Question Turn- " + user1
+    document.getElementById("player_answer").innerHTML = "Answer Turn- " + user2
 
 function askQuestion(){
     label1 = document.getElementById("number1").value
@@ -25,11 +27,11 @@ function checkAnswer(){
     answer2 = Number(document.getElementById("answer_lebel").value)
     if (answer2 == answer){
         player2_score+=1
-        document.getElementById("player2_name").innerHTML = localStorage.getItem("User 2") + ": " + player2_score
+        document.getElementById("player2_name").innerHTML = user2 + ": " + player2_score
         document.getElementById("answer_part").style.display = "none";
     }else{
         player1_score+=1
-        document.getElementById("player1_name").innerHTML = localStorage.getItem("User 1") + ": " + player1_score
+        document.getElementById("player1_name").innerHTML = user1 + ": " + player1_score
         document.getElementById("answer_part").style.display = "none";
     }
 
