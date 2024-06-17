@@ -1,6 +1,8 @@
 var player1_score = 0
 var player2_score = 0
-answer = 0
+var answer = 0
+var user1
+var user2
 localStorage.removeItem("User 1")
 localStorage.removeItem("User 2")
 function addUser(){
@@ -24,7 +26,7 @@ function askQuestion(){
     document.getElementById("Question").innerHTML = label1 + "*" + label2
 }
 function checkAnswer(){
-    answer2 = Number(document.getElementById("answer_lebel").value)
+    var answer2 = Number(document.getElementById("answer_lebel").value)
     if (answer2 == answer){
         player2_score+=1
         document.getElementById("player2_name").innerHTML = user2 + ": " + player2_score
