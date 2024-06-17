@@ -15,7 +15,7 @@ function setup(){
     document.getElementById("player2_name").innerHTML = user2 + ": " + player2_score
     document.getElementById("player_question").innerHTML = "Question Turn- " + user1
     document.getElementById("player_answer").innerHTML = "Answer Turn- " + user2
-
+}
 function askQuestion(){
     label1 = document.getElementById("number1").value
     label2 = document.getElementById("number2").value
@@ -35,5 +35,4 @@ function checkAnswer(){
         document.getElementById("answer_part").style.display = "none";
     }
 
-}
 }
