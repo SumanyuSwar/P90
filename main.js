@@ -1,5 +1,5 @@
 var player1_score = 0
-localStorage.clear
+localStorage.clear()
 var player2_score = 0
 answer = 0
 function addUser(){
