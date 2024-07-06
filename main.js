@@ -3,9 +3,12 @@ localStorage.removeItem("User 2")
 var player1_score = 0
 var player2_score = 0
 var answer = 0
+var x, y
 function addUser(){
     localStorage.setItem("User 1", document.getElementById("user_in_1").value)
     localStorage.setItem("User 2", document.getElementById("user_in_2").value)
+    x = document.getElementById("user_in_1").value;
+    y = document.getElementById("user_in_2").value;
     if (localStorage.getItem("User 1") == "" || localStorage.getItem("User 2") == ""){
         document.getElementById("error_tex").innerHTML="Error, User name empty";
         setTimeout(function(){
@@ -16,10 +19,10 @@ function addUser(){
     }
 }
 function setup(){
-    document.getElementById("player1_name").innerHTML = localStorage.getItem("User 1") + ": " + player1_score
-    document.getElementById("player2_name").innerHTML = localStorage.getItem("User 2") + ": " + player2_score
-    document.getElementById("player_question").innerHTML = "Question Turn- " + localStorage.getItem("User 1")
-    document.getElementById("player_answer").innerHTML = "Answer Turn- " + localStorage.getItem("User 2")
+    document.getElementById("player1_name").innerHTML = x + ": " + player1_score
+    document.getElementById("player2_name").innerHTML = y + ": " + player2_score
+    document.getElementById("player_question").innerHTML = "Question Turn- " + x
+    document.getElementById("player_answer").innerHTML = "Answer Turn- " + y
 }
 function askQuestion(){
     label1 = document.getElementById("number1").value
