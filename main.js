@@ -1,3 +1,5 @@
+localStorage.removeItem("User 1")
+localStorage.removeItem("User 2")
 var player1_score = 0
 var player2_score = 0
 var answer = 0
